@@ -1,0 +1,25 @@
+<div class="ui padded grid">
+  <div class="row">
+    <div class="div" style="width: 20%;">
+      <app-product-list
+        [products]="products"
+        (selectionChanged)="handleSelectionChange($event)"
+      ></app-product-list>
+    </div>
+    <div class="div" style="width: 40%;">
+      <app-product-info
+        *ngIf="selectedProduct"
+        [product]="selectedProduct"
+        (handleClose)="onClose($event)"
+        (handleUpdate)="onUpdate($event)"
+      ></app-product-info>
+    </div>
+    <div class="div" style="width: 40%; padding-left: 0.5em;">
+      <app-product-form
+        *ngIf="selectedProduct && selectedProductForUpdate"
+        [product]="selectedProductForUpdate"
+        (handleClose)="onUpdateClose($event)"
+      ></app-product-form>
+    </div>
+  </div>
+</div>

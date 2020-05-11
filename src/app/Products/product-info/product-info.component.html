@@ -1,0 +1,38 @@
+<div class="ui blue segment">
+  <button class="ui right floated icon button" (click)="onClose()">
+    <i class="close icon"></i>
+  </button>
+  <h1 class="ui header">{{ product.name }}</h1>
+  <p>{{ product.description }}</p>
+  <div class="ui divider"></div>
+  <table class="ui table" style="color: black; background-color: #0e6eb871;">
+    <tbody>
+      <tr>
+        <td>Price</td>
+        <td>{{ product.price | currency: "INR" }}</td>
+      </tr>
+      <tr>
+        <td>Owner</td>
+        <td>{{ product.owner }}</td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>{{ product.color }}</td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td>{{ product.quantity }}</td>
+      </tr>
+      <tr>
+        <td>In Stock</td>
+        <td>
+          <i class="red close icon" *ngIf="!product.inStock"></i>
+          <i class="green check icon" *ngIf="product.inStock"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="ui button blue" (click)="onUpdate()">
+    Update Product
+  </button>
+</div>

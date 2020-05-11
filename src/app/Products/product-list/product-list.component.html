@@ -1,0 +1,9 @@
+<div class="ui vertical pointing menu">
+  <a
+    class="item"
+    *ngFor="let product of products"
+    (click)="selectProduct($event, product.id)"
+  >
+    {{ product.name }}
+  </a>
+</div>

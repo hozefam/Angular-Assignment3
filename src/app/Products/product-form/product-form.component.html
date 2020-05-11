@@ -1,0 +1,65 @@
+<div class="ui blue segment">
+  <form class="ui form">
+    <button class="ui right floated icon button" (click)="onClose()">
+      <i class="close icon"></i>
+    </button>
+    <div class="field">
+      <label>Product Name</label>
+      <input
+        type="text"
+        name="name"
+        placeholder="Product Name"
+        [(ngModel)]="product.name"
+      />
+    </div>
+    <div class="field">
+      <label>Product Description</label>
+      <input
+        type="text"
+        name="Description"
+        placeholder="Description"
+        [(ngModel)]="product.description"
+      />
+    </div>
+    <div class="field">
+      <label>Price</label>
+      <input
+        type="text"
+        name="Price"
+        placeholder="100"
+        [(ngModel)]="product.price"
+      />
+    </div>
+    <div class="field">
+      <label>Owner</label>
+      <input
+        type="text"
+        name="Owner"
+        placeholder="ABC..."
+        [(ngModel)]="product.owner"
+      />
+    </div>
+    <div class="field">
+      <label>Quantity</label>
+      <input
+        type="text"
+        name="Quantity"
+        placeholder="100"
+        [(ngModel)]="product.quantity"
+      />
+    </div>
+    <div class="field">
+      <div class="ui checkbox">
+        <input
+          type="checkbox"
+          name="instock"
+          [value]="product.inStock"
+          [checked]="product.inStock"
+          [(ngModel)]="product.inStock"
+        />
+        <label>In Stock</label>
+      </div>
+    </div>
+    <!-- <button class="ui button" type="submit">Submit</button> -->
+  </form>
+</div>
